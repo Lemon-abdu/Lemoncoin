@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+/* HTML: <div class="loader"></div> */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:black;
+}
+
+.centered {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center; /* Center text horizontally */
+}
+
+.centered::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.centered > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.loader {
+  display: inline-flex;
+  gap: 10px;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(farthest-side,#000 95%,#0000) 50%/8px 8px no-repeat
+    #fff;
+  aspect-ratio: 1;
+  animation: l10 1.5s infinite alternate;
+}
+.loader:after {
+  --s:-1;
+}
+@keyframes l10 {
+  0% ,20% {transform:scaleX(var(--s,1)) rotate(0deg) ;clip-path:inset(0)}
+  60%,100%{transform:scaleX(var(--s,1)) rotate(25deg);clip-path:inset(30% 0 0)}
+}
+</style>
+  <title>Page Redirect Example</title>
+  
+  
+  <script>
+    // Redirect to Google after 3 seconds
+    setTimeout(function() {
+      window.location.href = "https://t.me/lemon_coins";
+    }, 5000); // 10000 milliseconds = 3 seconds
+  </script>
+</head>
+<body>
+  <div class="loader"> </div>
+</body>
+</html>
